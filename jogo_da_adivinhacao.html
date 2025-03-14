@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da adivinhação</title>
+</head>
+<body>
+    <script>
+        let continuar = 1
+        let parar = 2
+
+        let opcao = prompt("Bem-vindo ao Jogo da Adivinhação! Digite 1 para INICIAR ou 2 para ENCERRAR")
+            if (opcao == parar){
+                alert("OK! até a próxima");
+            }
+        
+            
+
+    let numeroPensado = Math.floor(Math.random()*10 + 1);
+
+        for(tentativa = 1; tentativa <= 3; tentativa++){
+            let chute = prompt(" Adivinhe um número de 1 a 10");
+            if (chute == numeroPensado){
+                alert(" Parabens, você acertou");
+                break;
+            }else{
+                alert("Você errou! Você tem mais " + 
+                        ( 3 - tentativa) + " tentativas.");
+                if(tentativa == 3 ){
+                    document.write(" Eu tinha pensado " + numeroPensado);                   
+                }
+            }           
+        }
+        
+        
+        for(tentativa1 = 1; tentativa1 <= 3; tentativa1 = tentativa1 + 1){
+            let chute =  prompt(" Digite 1 para continuar ou 2 para parar!");
+            if(chute == continuar){
+                alert(" Vamos continuar o jogo")
+                for(tentativa = 1; tentativa <= 3; tentativa++){
+                    let chute = prompt(" Adivinhe um número de 1 a 10");
+                    if (chute == numeroPensado){
+                        alert(" Parabens, você acertou");
+                        break;
+                    }else{
+                        alert("Você errou! Você tem mais " + 
+                                ( 3 - tentativa) + " tentativas.");
+                        if(tentativa == 3 ){
+                        document.write(" Eu tinha pensado " + numeroPensado);
+                        }
+                    }
+                }
+            } else{
+                alert(" OK! Vamos parar de jogar :( )")
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>
